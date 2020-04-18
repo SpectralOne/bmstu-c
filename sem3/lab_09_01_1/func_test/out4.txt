@@ -1,0 +1,9 @@
+Input n, m:
+Input elements:
+Input n, m:
+Input elements:
+Input power for matrix: Input power for matrix: Result:
+1224 1340 1715 
+315 329 560 
+450 435 714 
+

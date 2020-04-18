@@ -1,0 +1,23 @@
+Test #1
+0 0.1
+I/O error!
+
+Test #2
+1 0.00000000001
+f(x) s(x) Abs Otn : 0.8414710 0.8414710 0.0 0.0
+
+Test #3
+-12 0.0000001
+f(x) s(x) Abs Otn : 0.5365729 0.5365729 0.0018843 0.0010111
+
+Test #4
+a b
+I/O error!
+
+Test #5
+1 -1
+Ranger error!
+
+Test #6
+1 2
+Range error!

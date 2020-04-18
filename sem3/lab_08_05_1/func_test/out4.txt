@@ -1,0 +1,2 @@
+Enter size of array: Enter Array: Enter pos: Range Error!
+'pos' can't be greater than 'size'!

@@ -1,0 +1,32 @@
+Test case #1 
+Comparing files test_now.txt and OUT1.TXT
+FC: no differences encountered
+
+Test case #2 
+Comparing files test_now.txt and OUT2.TXT
+FC: no differences encountered
+
+Test case #3 
+Comparing files test_now.txt and OUT3.TXT
+FC: no differences encountered
+
+Test case #4 
+Comparing files test_now.txt and OUT4.TXT
+FC: no differences encountered
+
+Test case #5 
+Comparing files test_now.txt and OUT5.TXT
+FC: no differences encountered
+
+Test case #6 
+Comparing files test_now.txt and OUT6.TXT
+FC: no differences encountered
+
+Test case #7 
+Comparing files test_now.txt and OUT7.TXT
+FC: no differences encountered
+
+Test case #8 
+Comparing files test_now.txt and OUT8.TXT
+FC: no differences encountered
+

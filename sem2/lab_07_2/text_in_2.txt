@@ -1,0 +1,7 @@
+// пустой входной файл //
+
+Enter new record:
+Name
+Manufacturer
+123
+456

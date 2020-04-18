@@ -1,0 +1,27 @@
+Test #1
+0 1 2 3
+Bad input!
+
+Test #2
+-1 -1 10 15
+Bad input!
+
+Test #3
+10 -1 20 30
+t = 19.667
+
+Test #4
+2 15 3 40
+t = 30
+
+Test #5
+2 -1 5 -2
+Bad input!
+
+Test #6
+13 37 32 -28
+t = -9.2222
+
+Test #7
+1 2 3 4
+t = 3.5

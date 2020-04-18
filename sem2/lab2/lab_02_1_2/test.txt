@@ -1,0 +1,23 @@
+Test #1
+0 0 0 1 0 2
+Triangle doesn't exist!
+
+Test #2
+1 1 1 1 1 1
+Triangle doesn't exist!
+
+Test #3
+0 0 0 3 4 0
+s = 6.0
+
+Test #4
+-2 -2 1 4 5 0
+s = 18.0
+
+Test #5
+1 0 2 0 3 4
+s = 2.0
+
+Test #6
+a 1 2 3 4
+I/O error!

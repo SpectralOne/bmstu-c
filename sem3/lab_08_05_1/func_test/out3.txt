@@ -1,0 +1,2 @@
+Enter size of array: Range Error!
+'size' must be greater than 'zero'!

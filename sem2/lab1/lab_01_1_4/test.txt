@@ -1,0 +1,27 @@
+Test #1
+37
+Floor = 1, Porch = 2
+
+Test #2
+36
+Floor = 9, Porch = 1
+
+Test #3
+0
+Bad input!
+
+Test #4
+-1
+Bad input!
+
+Test #5
+136
+Floor = 7, Porch = 4
+
+Test #6
+3600
+Floor = 9, Porch = 100
+
+Test #7
+40
+Floor = 1, Porch = 2

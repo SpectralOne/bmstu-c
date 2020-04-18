@@ -1,0 +1,23 @@
+Test #1
+15 3
+Chastnoe Ostatok: 5 0
+
+Test #2
+1 1
+Chastnoe Ostatok: 1 0
+
+Test #3
+0 0
+I/O error!
+
+Test #4
+-1 2
+I/O error!
+
+Test #5
+a b
+I/O error!
+
+Test #6
+2 3
+0 2

@@ -1,0 +1,9 @@
+Input n, m:
+Input elements:
+Input n, m:
+Input elements:
+Input power for matrix: Input power for matrix: Result:
+15464 34369 22134 
+36567 81282 52327 
+22680 50421 32461 
+

@@ -1,0 +1,12 @@
+Input n, m:
+Input elements:
+Input n, m:
+Input elements:
+Input power for matrix: Input power for matrix: Result:
+42 50 42 58 45 44 
+105 131 114 151 126 113 
+63 77 66 89 72 67 
+63 77 66 89 72 67 
+63 77 66 89 72 67 
+63 77 66 89 72 67 
+

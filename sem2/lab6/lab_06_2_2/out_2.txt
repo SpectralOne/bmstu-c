@@ -1,0 +1,8 @@
+Result:
+this yes
+is yes
+a yes
+kind no
+of no
+test yes
+String no

@@ -1,0 +1,1 @@
+Enter size of array: Enter Array: Enter pos: Array: 0.800000 2.000000 0.800000 2.000000 2.000000 0.800000 

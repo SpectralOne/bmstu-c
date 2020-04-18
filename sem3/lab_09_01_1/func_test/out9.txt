@@ -1,0 +1,5 @@
+Input n, m:
+Input elements:
+Input n, m:
+Input elements:
+Input power for matrix: I/O Error!

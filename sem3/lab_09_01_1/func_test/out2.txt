@@ -1,0 +1,10 @@
+Input n, m:
+Input elements:
+Input n, m:
+Input elements:
+Input power for matrix: Input power for matrix: Result:
+1 0 0 0 
+0 1 0 0 
+0 0 1 0 
+0 0 0 1 
+

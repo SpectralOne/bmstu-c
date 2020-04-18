@@ -1,0 +1,8 @@
+Input n, m:
+Input elements:
+Input n, m:
+Input elements:
+Input power for matrix: Input power for matrix: Result:
+68 68 
+148 148 
+
