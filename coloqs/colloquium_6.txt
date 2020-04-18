@@ -1,0 +1,100 @@
+#include <stdio.h>
+#include <errno.h>
+//....
+#define VALID      1
+#define OK         0
+#define ERROR     -1
+#define WRONG_CMD -2
+#define READ_ERR  -3
+#define NO_FILE   -4
+typedef struct {
+    /*
+	 ...
+     */
+} employee_t;
+
+void usage()
+{
+    // CMD usage information
+}
+
+int read_whole_file(FILE* f, employee_t* data_base, long size)
+{
+    //....
+	if (size % sizeof(data_base[0])
+	    return ERR;
+	else
+	{
+        fread(data_base, sizeof(employee_t), size, f);
+        //....
+    return ...;
+}
+
+int read1(FILE* f, int pos_from, employee_t* to)
+{
+    int status = ERROR;
+    pos_from *= sizeof(employee_t);
+
+    if (fseek(f, pos_from, SEEK_SET) == 0)
+        if (fread(to, sizeof(employee_t), 1, f) == 1)
+            status = OK;
+
+    return status;
+}
+
+int write1(FILE* f, int pos_to, employee_t from) // записать на i-ую позицию ин-
+{
+    int status = ERROR;
+    pos_to *= sizeof(employee_t);
+
+    if (fseek(f, pos_to, SEEK_SET) == 0)
+        if (fwrite(&from, sizeof(employee_t), 1, f) == 1)
+            status = OK;
+
+    return status;
+}
+
+long filelen(FILE* f) // длина файла (количество записей)
+{
+    int status = OK;
+    long whole_size, size;
+
+    if (fseek(f, 0, SEEK_END) == 0)
+    {
+        if ((whole_size = ftell(f)) == -1L)
+            status = ERROR;
+        size = whole_size / sizeof(employee_t);
+    }
+    if (status == ERROR)
+        return status;
+    return size;
+}
+
+int is_valid(FILE* f) 
+{
+    employee_t cur;
+
+    while (fread(&cur, sizeof(employee_t), 1, f) == 1)
+
+    if (feof(f))
+        return VALID;
+    return READ_ERR;
+}
+
+int main(int argc, char **argv)
+{
+    // Variable declaring //
+    int status = OK;
+    employee_t ...;
+    if (argc != ...)
+	{
+        status = WRONG_CMD;
+		usage()
+	}
+	else
+    {
+    	/*
+		 ...
+         */
+    return status;
+}

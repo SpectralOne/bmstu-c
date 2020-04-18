@@ -1,0 +1,53 @@
+
+  // Sum //
+
+
+#include <stdio.h>
+#include <math.h>
+#define OK         0
+#define INP_ERR   -1
+#define RANGE_ERR -2
+#define PRECISION  0.0000000000001
+
+int f_equal(double num1, double num2)
+{
+    return (fabs(num1 - num2) < PRECISION);
+}
+
+double sum(double x, double eps)
+{
+    int i = 1;
+    double s = x, t = x;
+
+    while (fabs(t) > eps)
+    {
+        i += 2;
+        t = -t * x * x / (i - 1) / i;
+        s += t;
+    }
+    return s;
+}
+
+int main(void)
+{
+    int status = OK;
+    double x, eps;
+
+    printf("Enter x and eps: ");
+    if (scanf("%lf%lf", &x, &eps) == 2)
+    {
+        if (eps < 0 || eps > 1 || f_equal(eps, 0))
+        {
+            status = RANGE_ERR;
+            printf("Range error!");
+        }
+        else
+            printf("Sum = %.13f", sum(x, eps));
+    }
+    else
+    {
+        status = INP_ERR;
+        printf("I/O error!");
+    }
+    return status;
+}

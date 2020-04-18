@@ -1,0 +1,144 @@
+#include <stdio.h>
+#include <math.h>
+#define TRUE           1
+#define FALSE          0
+#define OK             0
+#define ZERO_DIVISION -1
+#define PRECISION      0.000001
+typedef struct {
+    int numerator, denominator, corrupted, infinity;
+} rational_t;
+
+int f_equal(float num1, float num2)
+{
+    if (fabs(num1 - num2) < PRECISION)
+        return TRUE;
+    else
+        return FALSE;
+}
+
+void print_struct(rational_t* data)
+{
+    printf("Fraction: %d/%d (%.2f)\n", data->numerator, data->denominator,\
+                                       (float)data->numerator / data->denominator);
+    printf("Corrupted = %d\n", data->corrupted);
+    printf("Infinity = %d\n", data->infinity);
+}
+
+void inv(rational_t* f)
+{
+    int tmp;
+
+    tmp = f->numerator;
+    f->numerator = f->denominator;
+    f->denominator = tmp;
+}
+
+int add(rational_t* a, rational_t* b, rational_t* result)
+{
+    result->numerator = a->numerator * b->denominator + b->numerator * a->denominator;
+    result->denominator = a->denominator * b->denominator;
+    if (result->numerator > result->denominator)
+        result->corrupted = TRUE;
+    else
+        result->corrupted = FALSE;
+
+    double number = result->numerator / result->denominator;
+    result->infinity = !(isnormal(number) || isnan(number));
+
+    return OK;
+}
+
+int sub(rational_t* a, rational_t* b, rational_t* result)
+{
+    result->numerator = a->numerator * b->denominator - b->numerator * a->denominator;
+    result->denominator = a->denominator * b->denominator;
+    if (result->numerator > result->denominator)
+        result->corrupted = TRUE;
+    else
+        result->corrupted = FALSE;
+
+    double number = result->numerator / result->denominator;
+    result->infinity = !(isnormal(number) || isnan(number));
+
+    return OK;
+}
+
+int mul(rational_t* a, rational_t* b, rational_t* result)
+{
+    result->numerator = a->numerator * b->numerator;
+    result->denominator = a->denominator * b->denominator;
+    if (result->numerator > result->denominator)
+        result->corrupted = TRUE;
+    else
+        result->corrupted = FALSE;
+
+    double number = result->numerator / result->denominator;
+    result->infinity = !(isnormal(number) || isnan(number));
+
+    return OK;
+}
+
+int div(rational_t* a, rational_t* b, rational_t* result)
+{
+    int status = OK;
+    if ((a->denominator * b->numerator) != 0)
+    {
+        result->numerator = a->numerator * b->denominator;
+        result->denominator = a->denominator * b->numerator;
+
+        /*
+         inv(b);
+         mul(a, b);
+        */
+
+        if (result->numerator > result->denominator)
+            result->corrupted = TRUE;
+        else
+            result->corrupted = FALSE;
+
+        double number = result->numerator / result->denominator;
+        result->infinity = !(isnormal(number) || isnan(number));
+    }
+    else
+        status = ZERO_DIVISION;
+
+    return status;
+}
+
+int isEqual(rational_t* a, rational_t* b)
+{
+    if (f_equal(a->numerator * b->denominator - a->denominator * b->numerator, 0))
+        return TRUE;
+    return FALSE;
+}
+
+int isLess(rational_t* a, rational_t* b)
+{
+    if ((a->numerator * b->denominator - a->denominator * b->numerator) < 0)
+        return TRUE;
+    return FALSE;
+}
+
+int isLessEqual(rational_t* a, rational_t* b)
+{
+    if((a->numerator * b->denominator - a->denominator * b->numerator) < 0 || isEqual(a , b))
+        return TRUE;
+    return FALSE;
+}
+
+int main(void)
+{
+    rational_t f[2], result;
+
+    scanf("%d/%d %d/%d", &f[0].numerator, &f[0].denominator, &f[1].numerator, &f[1].denominator);
+   // .....
+//    sub(&f[0], &f[1], &result);
+   /* if (isEqual(&f[0], &f[1]))
+        printf("\nYEA");
+    else
+        printf("\nNAY");
+   */
+//    print_struct(&result);
+    return 0;
+}

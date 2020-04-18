@@ -1,0 +1,86 @@
+
+  // Bisection //
+
+#include <stdio.h>
+#include <math.h>
+#define OK         0
+#define INP_ERR   -1
+#define RNG_ERR   -2
+#define NO_ROOTS  -3
+#define PRECISION  0.0000000000001
+
+int f_equal(double num1, double num2)
+{
+    return (fabs(num1 - num2) < PRECISION);
+}
+
+double F(double x)
+{
+    return sin(x);
+}
+
+int bisection(int a, int b, int step, double eps)
+{
+    int a1, b1, n = 0;
+    double root, xstart, xend;
+
+    b1 = a;
+    a1 = a;
+
+    for (int i = 0; i < (b - a) / step; i++)
+    {
+        b1 += step;
+        a1 = b1 - step;
+        if (b1)
+        {
+            if (F(a1) * F(b1) < 0 || f_equal(F(a1) * F(b1), 0))
+            {
+                xstart = a1;
+                xend = b1;
+                while (fabs(fabs(xstart) - fabs(xend)) > eps)
+                {
+                    root = (xend + xstart) / 2;
+                    if (F(xstart) * F(root) < 0 || f_equal(F(xstart) * F(root), 0))
+                        xend = root;
+                    else
+                        xstart = root;
+                }
+                n++;
+                printf("Root #%d = %f\n", n, root);
+            }
+        }
+    }
+    return n;
+}
+
+int main(void)
+{
+
+    int a, b, step, roots, status = OK;
+    double eps;
+
+    printf("Enter start, end, step and eps: ");
+    if (scanf("%d %d %d %lf", &a, &b, &step, &eps) == 4)
+    {
+        if (eps < 0 || eps > 1 || f_equal(eps, 0) || step < 1)
+        {
+            status = RNG_ERR;
+            printf("Range error!");
+        }
+        else
+        {
+            roots = bisection(a, b, step, eps);
+            if (!roots)
+            {
+                status = NO_ROOTS;
+                printf("No roots found!");
+            }
+        }
+    }
+    else
+    {
+        status = INP_ERR;
+        printf("I/O error!");
+    }
+    return status;
+}
